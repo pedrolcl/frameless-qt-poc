@@ -44,7 +44,7 @@ FramelessWindow::FramelessWindow(QWidget *parent)
 
     m_toolbar = new QFrame;
     QHBoxLayout *hlayout = new QHBoxLayout(m_toolbar);
-    hlayout->setMargin(0);
+    hlayout->setContentsMargins(0, 0, 0, 0);
     hlayout->addWidget(new QLabel("FramelessWindow Demo"));
     hlayout->addStretch();
     hlayout->addWidget(appMenu);
@@ -114,16 +114,22 @@ bool FramelessWindow::event(QEvent* ev)
     case QEvent::HoverMove: {
         m_edges = Qt::Edges();
         QHoverEvent *event = static_cast<QHoverEvent*>(ev);
-        if ( event->pos().x() < margin ) {
+        QPoint p =
+    #if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+                    event->pos();
+    #else
+                    event->position().toPoint();
+    #endif
+        if ( p.x() < margin ) {
             m_edges |= Qt::LeftEdge;
         }
-        if ( event->pos().x() > (width() - margin) ) {
+        if ( p.x() > (width() - margin) ) {
             m_edges |= Qt::RightEdge;
         }
-        if ( event->pos().y() < margin ) {
+        if ( p.y() < margin ) {
             m_edges |= Qt::TopEdge;
         }
-        if ( event->pos().y() > (height() - margin) ) {
+        if ( p.y() > (height() - margin) ) {
             m_edges |= Qt::BottomEdge;
         }
         updateCursor();
