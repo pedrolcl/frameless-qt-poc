@@ -12,7 +12,7 @@ set( CMAKE_AUTORCC ON )
 set( CMAKE_AUTOUIC ON )
 
 find_package ( QT NAMES Qt5 Qt6 REQUIRED )
-find_package ( Qt${QT_VERSION_MAJOR} COMPONENTS Core Gui Widgets REQUIRED )
+find_package ( Qt${QT_VERSION_MAJOR} 5.15 COMPONENTS Core Gui Widgets REQUIRED )
 
 add_executable ( ${PROJECT_NAME} )
 
