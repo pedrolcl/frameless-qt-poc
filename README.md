@@ -10,7 +10,7 @@ Since Qt 5.15 there are two new [QWindow](https://doc.qt.io/qt-5/qwindow.html) s
 * [startSystemMove](https://doc.qt.io/qt-5/qwindow.html#startSystemMove)
 * [startSystemResize](https://doc.qt.io/qt-5/qwindow.html#startSystemResize)
 
-These functions can be used to implement frameless windows ( using the *Qt:FramelessWindowHint*
+These functions can be used to implement frameless windows ( using the *Qt::FramelessWindowHint*
 [window flag](https://doc.qt.io/qt-5/qt.html#WindowType-enum) ) that can be moved and resized
 like normal windows having a frame and a title bar, but the application is totally free to
 draw those elements. This is called Client Side Window Decorations (CSD).
@@ -23,7 +23,7 @@ older Qt versions, for instance:
 * [GoodWindow](https://github.com/antonypro/QGoodWindow)
 * [qt-csd](https://github.com/Longhanks/qt-csd)
 
-This is an easier way, and has the advantage of working on Window, macOS and Linux (both X11/xcb and
+This is an easier way, and has the advantage of working on Windows, macOS and Linux (both X11/xcb and
 Wayland). It can be used with projects based on Qt 5.15 and Qt 6.x.
 
 ## Results
