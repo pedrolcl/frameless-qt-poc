@@ -28,6 +28,8 @@
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include <QDebug>
+#include <QApplication>
 #include <QToolButton>
 #include <QMenu>
 #include <QAction>
@@ -42,6 +44,7 @@
 
 DemoWindow::DemoWindow(QWidget *parent): FramelessWindow(parent)
 {
+    qDebug() << Q_FUNC_INFO << "running on" << qApp->platformName();
     QWidget* central = new QWidget(this);
     setCentralWidget(central);
 
