@@ -3,22 +3,20 @@
 
 #include <QMainWindow>
 
-class QFrame;
-
 class FramelessWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
     explicit FramelessWindow(QWidget *parent = nullptr);
+    QWidget *pseudoCaption() const;
+    void setPseudoCaption(QWidget *widget);
 
 protected:
-    void updateCursor();
+    void updateCursor(Qt::Edges edges);
     bool event(QEvent* ev) override;
 
 private:
-    Qt::Edges m_edges;
-    QFrame *m_toolbar;
+    QWidget *m_pseudoCaption;
 };
 
 #endif

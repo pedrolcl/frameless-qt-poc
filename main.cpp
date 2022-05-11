@@ -1,10 +1,10 @@
 #include <QApplication>
-#include "framelesswindow.h"
+#include "demowindow.h"
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    FramelessWindow w;
+    DemoWindow w;
     w.show();
     return app.exec();
 }

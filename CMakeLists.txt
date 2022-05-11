@@ -17,9 +17,11 @@ find_package ( Qt${QT_VERSION_MAJOR} 5.15 COMPONENTS Core Gui Widgets REQUIRED )
 add_executable ( ${PROJECT_NAME} )
 
 target_sources( ${PROJECT_NAME} PRIVATE
-    main.cpp
     framelesswindow.cpp
     framelesswindow.h
+    demowindow.cpp
+    demowindow.h
+    main.cpp
 )
 
 target_link_libraries ( ${PROJECT_NAME} PRIVATE
