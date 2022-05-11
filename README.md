@@ -2,19 +2,21 @@
 
 FramelessWindow Demo for Qt Applications (POC)
 
+![screenshot](screenshot.png "screenshot")
+
 ## Why this exists?
 
 Since Qt 5.15 there are two new [QWindow](https://doc.qt.io/qt-5/qwindow.html) slots (functions):
 * [startSystemMove](https://doc.qt.io/qt-5/qwindow.html#startSystemMove)
 * [startSystemResize](https://doc.qt.io/qt-5/qwindow.html#startSystemResize)
 
-They can be used to make frameless windows that can be moved and resized like normal windows having
-a frame and a title bar, but the application is totally free to draw those components. This is called 
-Client Side Window Decorations (CSD) and there is a similar QML based demo [here](https://github.com/johanhelsing/qt-csd-demo)
+These functions can be used to implement frameless windows that can be moved and resized like normal windows having
+a frame and a title bar, but the application is totally free to draw those components. This is called
+Client Side Window Decorations (CSD). There is a similar QML based demo [here](https://github.com/johanhelsing/qt-csd-demo)
 and also a [blog post](https://www.qt.io/blog/custom-window-decorations) by Johan Helsing.
 
-This POC is not design oriented, but functionality and simplicity. There are many other similar demos
-with much more design oriented, and based on native functions which may be of interest for older 
+This POC is not design oriented, but on functionality and simplicity. There are several other similar demos
+with much more elaborated design, and based on native functions which may be of interest for older
 Qt versions, for instance:
 * [GoodWindow](https://github.com/antonypro/QGoodWindow)
 * [qt-csd](https://github.com/Longhanks/qt-csd)
