@@ -81,7 +81,7 @@ DemoWindow::DemoWindow(QWidget *parent): FramelessWindow(parent)
     textEdit->setReadOnly(true);
     textEdit->setText("This window has no frame, but can be moved and resized...");
 
-    int margin = style()->pixelMetric(QStyle::PM_DefaultTopLevelMargin);
+    int margin = style()->pixelMetric(QStyle::PM_LayoutTopMargin);
     QVBoxLayout *vlayout = new QVBoxLayout(central);
     vlayout->setContentsMargins(margin, margin, margin, margin);
     vlayout->addWidget(toolbar);

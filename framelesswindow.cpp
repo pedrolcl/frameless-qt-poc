@@ -72,7 +72,7 @@ void FramelessWindow::updateCursor(Qt::Edges edges)
 bool FramelessWindow::event(QEvent* ev)
 {
     static Qt::Edges edges = Qt::Edges();
-    const int margin = style()->pixelMetric(QStyle::PM_DefaultTopLevelMargin);
+    const int margin = style()->pixelMetric(QStyle::PM_LayoutTopMargin);
 
     switch (ev->type()) {
     case QEvent::MouseButtonPress:
