@@ -1,6 +1,7 @@
 /*
     FramelessWindow Demo for Qt Applications
     Copyright (c) 2022, Pedro López-Cabanillas <plcl@users.sf.net>. All rights reserved.
+    Copyright (c) 2023 CM0use
 
     Redistribution and use in source and binary forms, with or without
     modification, are permitted provided that the following conditions are met:
