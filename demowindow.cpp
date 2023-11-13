@@ -1,6 +1,7 @@
 /*
     FramelessWindow Demo for Qt Applications
     Copyright (c) 2022, Pedro López-Cabanillas <plcl@users.sf.net>. All rights reserved.
+    Copyright (c) 2023 CM0use
 
     Redistribution and use in source and binary forms, with or without
     modification, are permitted provided that the following conditions are met:
@@ -57,9 +58,17 @@ DemoWindow::DemoWindow(QWidget *parent): FramelessWindow(parent)
     connect(minimize, &QAction::triggered, this, [this]{
         this->setWindowState(Qt::WindowMinimized);
     });
+
+    QAction *customPseudoCaption = new QAction("Custom Pseudo Caption", this);
+    customPseudoCaption->setCheckable(true);
+    customPseudoCaption->setChecked(true);
+
     QAction *exit = new QAction("Quit", this);
     connect(exit, &QAction::triggered, this, &FramelessWindow::close);
+
     popup->addAction(minimize);
+    popup->addSeparator();
+    popup->addAction(customPseudoCaption);
     popup->addSeparator();
     popup->addAction(exit);
     appMenu->setMenu(popup);
@@ -69,13 +78,25 @@ DemoWindow::DemoWindow(QWidget *parent): FramelessWindow(parent)
     closeButton->setIcon(QIcon::fromTheme("window-close"));
     connect(closeButton, &QToolButton::clicked, this, &FramelessWindow::close);
 
-    QFrame *toolbar = new QFrame;
+    QWidget *toolbar = new QWidget;
     QHBoxLayout *hlayout = new QHBoxLayout(toolbar);
+    QLabel *title = new QLabel("FramelessWindow Demo");
     hlayout->setContentsMargins(0, 0, 0, 0);
-    hlayout->addWidget(new QLabel("FramelessWindow Demo"));
+    hlayout->addWidget(title);
     hlayout->addStretch();
     hlayout->addWidget(appMenu);
     hlayout->addWidget(closeButton);
+
+    connect(customPseudoCaption, &QAction::triggered,
+            this, [this, closeButton, toolbar, title] (bool checked) {
+        setWindowFlag(Qt::FramelessWindowHint, checked);
+
+        setPseudoCaption(checked? toolbar: nullptr);
+        closeButton->setVisible(checked);
+        title->setVisible(checked);
+
+        showNormal();
+    });
 
     QTextEdit *textEdit = new QTextEdit;
     textEdit->setReadOnly(true);
