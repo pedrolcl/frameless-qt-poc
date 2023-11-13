@@ -30,7 +30,7 @@ Wayland). It can be used with projects based on Qt 5.15 and Qt 6.x.
 
 Tests built with Qt 5.15.2 and Qt 6.3.0
 
-:heavy_check_mark: means that it is usable.
+:white_check_mark: means that it is usable.
 
 :x: means that it is not usable.
 
@@ -38,7 +38,13 @@ Tests built with Qt 5.15.2 and Qt 6.3.0
 
 | Platform:      | Qt5 + move window  | Qt5 + resize       | Qt6 + move window  | Qt6 + resize       |
 | -------------- | ------------------ | ------------------ | ------------------ | ------------------ |
-| Windows        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| macOS          | :heavy_check_mark: | :x:                | :heavy_check_mark: | :heavy_check_mark: |
-| Linux X11/xcb  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Linux Wayland  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Windows        | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| macOS          | :white_check_mark: | :x:                | :white_check_mark: | :white_check_mark: |
+| Linux X11/xcb  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Linux Wayland  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+
+## Other Projects using the FramelessWindow class
+
+* [Drumstick MIDI File Player](https://github.com/pedrolcl/dmidiplayer)
+* [GenPassword](https://github.com/CM0use/GenPassword)
+* [TimeOut](https://github.com/CM0use/TimeOut)
